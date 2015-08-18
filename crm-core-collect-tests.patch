@@ -299,3 +299,48 @@ index 0000000..0a2ba62
 +  }
 +
 +}
+diff --git a/demo/src/Tests/CollectDemoTest.php b/demo/src/Tests/CollectDemoTest.php
+new file mode 100644
+index 0000000..c9f7885
+--- /dev/null
++++ b/demo/src/Tests/CollectDemoTest.php
+@@ -0,0 +1,39 @@
++<?php
++/**
++ * @file
++ * Contains \Drupal\collect_demo\Tests\CollectDemoTest.
++ */
++
++namespace Drupal\collect_demo\Tests;
++
++use Drupal\simpletest\WebTestBase;
++
++/**
++ * Tests the demo module for collect.
++ *
++ * @group collect
++ */
++class CollectDemoTest extends WebTestBase {
++
++  public static $modules = array('collect_demo');
++
++  /**
++   * Asserts the demo content on the web page.
++   */
++  public function testInstalled() {
++    $user = $this->drupalCreateUser(['access administration pages', 'administer collect']);
++    $this->drupalLogin($user);
++    $this->drupalGet('admin/content/collect');
++    $this->assertText('collect:url');
++    $host = \Drupal::request()->getHost();
++    $this->assertText('collect:collectjson/' . $host . '/entity/node/collect_demo');
++    $this->assertText('collect:collectjson-definition/global/fields');
++    $this->assertText('collect:collectjson/' . $host . '/entity/user');
++    $this->assertText('collect:collectjson-definition/global/fields');
++    $this->clickLink(t('View'));
++    $this->drupalGet('<front>');
++    $this->assertResponse(200);
++    $this->assertText('Collect Demo');
++  }
++
++}

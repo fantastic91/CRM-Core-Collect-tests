@@ -1,9 +1,9 @@
 diff --git a/crm/src/Tests/ProcessContactTest.php b/crm/src/Tests/ProcessContactTest.php
 new file mode 100644
-index 0000000..0a2ba62
+index 0000000..c28a82f
 --- /dev/null
 +++ b/crm/src/Tests/ProcessContactTest.php
-@@ -0,0 +1,295 @@
+@@ -0,0 +1,298 @@
 +<?php
 +/**
 + * @file
@@ -64,6 +64,9 @@ index 0000000..0a2ba62
 +      'name' => t('Gift'),
 +      'type' => 'gift',
 +    ])->save();
++
++    // Place local actions blocks.
++    $this->drupalPlaceBlock('local_actions_block');
 +  }
 +
 +  /**

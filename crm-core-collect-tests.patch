@@ -302,30 +302,6 @@ index 0000000..c28a82f
 +  }
 +
 +}
-diff --git a/demo/config/install/collect.model.collect_demo.yml b/demo/config/install/collect.model.collect_demo.yml
-index 963bbee..5d04f13 100644
---- a/demo/config/install/collect.model.collect_demo.yml
-+++ b/demo/config/install/collect.model.collect_demo.yml
-@@ -523,7 +523,6 @@ properties:
-           target_type: file
-           display_field: false
-           display_default: false
--          target_bundle: null
-         entity_type: node
-         translatable: true
-         type: image
-diff --git a/demo/config/install/collect.model.user.yml b/demo/config/install/collect.model.user.yml
-index b4d9c1c..a3fdc1b 100644
---- a/demo/config/install/collect.model.user.yml
-+++ b/demo/config/install/collect.model.user.yml
-@@ -472,7 +472,6 @@ properties:
-           target_type: file
-           display_field: false
-           display_default: false
--          target_bundle: null
-         entity_type: user
-         translatable: true
-         type: image
 diff --git a/demo/src/Tests/CollectDemoTest.php b/demo/src/Tests/CollectDemoTest.php
 new file mode 100644
 index 0000000..c9f7885
